@@ -24,7 +24,7 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
- //para mandar al servidor
+ //para mandar al para el servidor 
 
 db.Customer = require('../models/customer.model.js')(sequelize, Sequelize);
 db.Usuario = require('../models/usuario.js')(sequelize, Sequelize);

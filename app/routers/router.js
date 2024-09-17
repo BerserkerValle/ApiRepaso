@@ -33,5 +33,14 @@ router.get('/api/libros/pagefiltersort', libros.pagingfilteringsorting);
 router.put('/api/libros/update/:id', libros.updateById);
 router.delete('/api/libros/delete/:id', libros.deleteById);
 
+router.post('/api/autores/create', autores.create);
+router.get('/api/autores/all', autores.retrieveAllAutores);
+router.get('/api/autores/onebyid/:id', autores.getAutorById);
+router.get('/api/autores/filteringbynacionalidad', autores.filteringByNacionalidad);
+router.get('/api/autores/pagination', autores.pagination);
+router.get('/api/autores/pagefiltersort', autores.pagingfilteringsorting);
+router.put('/api/autores/update/:id', autores.updateById);
+router.delete('/api/autores/delete/:id', autores.deleteById);
+
 module.exports = router;
 

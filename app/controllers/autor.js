@@ -2,7 +2,7 @@ const db = require('../config/db.config.js');
 const Autor = db.Autor;
 
 const create = async (req, res) => {
-    let autor = {
+    const autor = {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         nacionalidad: req.body.nacionalidad,
@@ -31,7 +31,7 @@ const retrieveAllAutores = async (req, res) => {
             autores: autorInfos
         });
     } catch (error) {
-        console.log(error);
+        console.error(error); // Cambié console.log a console.error para errores
         res.status(500).json({
             message: "Error al obtener los autores!",
             error: error.message
@@ -54,7 +54,7 @@ const getAutorById = async (req, res) => {
             autor: autor
         });
     } catch (error) {
-        console.log(error);
+        console.error(error); // Cambié console.log a console.error para errores
         res.status(500).json({
             message: "Error al obtener el autor!",
             error: error.message
@@ -75,7 +75,7 @@ const filteringByNacionalidad = async (req, res) => {
             autores: results,
         });
     } catch (error) {
-        console.log(error);
+        console.error(error); // Cambié console.log a console.error para errores
         res.status(500).json({
             message: "Error al filtrar los autores!",
             error: error.message
@@ -166,9 +166,17 @@ const updateById = async (req, res) => {
 
         const result = await Autor.update(updatedObject, { where: { id_autor: autorId }, returning: true });
 
+        // Verifica si la actualización se realizó correctamente
+        if (result[0] === 0) {
+            return res.status(500).json({
+                message: "Error al actualizar el autor con id = " + autorId,
+                error: "No se pudo actualizar"
+            });
+        }
+
         res.status(200).json({
             message: "Autor actualizado exitosamente con id = " + autorId,
-            autor: result[1][0] // The updated author object
+            autor: result[1][0] // El objeto autor actualizado
         });
     } catch (error) {
         res.status(500).json({

@@ -33,29 +33,14 @@ router.get('/api/libros/pagefiltersort', libros.pagingfilteringsorting);
 router.put('/api/libros/update/:id', libros.updateById);
 router.delete('/api/libros/delete/:id', libros.deleteById);
 
-
-router.post('/api/autores/create', autoresController.create);
-
-// Obtener todos los autores
-router.get('/api/autores', autoresController.retrieveAllAutores);
-
-// Obtener un autor por ID
-router.get('/api/autores/:id', autoresController.getAutorById);
-
-// Filtrar autores por nacionalidad
-router.get('/api/autores/filter', autoresController.filteringByNacionalidad);
-
-// Paginación de autores
-router.get('/api/autores/pagination', autoresController.pagination);
-
-// Paginación, filtrado y ordenación
-router.get('/api/autores/pagingfilteringsorting', autoresController.pagingfilteringsorting);
-
-// Actualizar un autor por ID
-router.put('/api/autores/:id', autoresController.updateById);
-
-// Eliminar un autor por ID
-router.delete('/api/autores/:id', autoresController.deleteById);
+router.post('/api/autores/create', autores.create);
+router.get('/api/autores', autores.retrieveAllAutores);
+router.get('/api/autores/:id', autores.getAutorById);
+router.get('/api/autores/filter', autores.filteringByNacionalidad);
+router.get('/api/autores/paginate', autores.pagination);
+router.get('/api/autores/paginate-filter-sort', autores.pagingfilteringsorting);
+router.put('/api/autores/:id', autores.updateById);
+router.delete('/api/autores/:id', autores.deleteById);
 
 module.exports = router;
 

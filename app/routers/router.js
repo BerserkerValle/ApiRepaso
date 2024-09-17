@@ -6,7 +6,7 @@ let router = express.Router();
 const customers = require('../controllers/controller.js');
 const usuarios = require('../controllers/usuario.js');
 const libros = require('../controllers/libro.js');
-
+const autores = require('../controllers/autor.js');
 
 router.post('/api/customers/create', customers.create);
 router.get('/api/customers/all', customers.retrieveAllCustomers);
@@ -33,7 +33,7 @@ router.get('/api/libros/pagefiltersort', libros.pagingfilteringsorting);
 router.put('/api/libros/update/:id', libros.updateById);
 router.delete('/api/libros/delete/:id', libros.deleteById);
 
-// Crear un nuevo autor
+
 router.post('/api/autores/create', autoresController.create);
 
 // Obtener todos los autores

@@ -5,6 +5,7 @@ let router = express.Router();
  //constasntes de rutas 
 const customers = require('../controllers/controller.js');
 const usuarios = require('../controllers/usuario.js');
+const libros = require('../controllers/libro.js');
 
 
 router.post('/api/customers/create', customers.create);
@@ -22,6 +23,14 @@ router.get('/api/usuarios/onebyid/:id', usuarios.getUsuarioById);
 router.put('/api/usuarios/update/:id', usuarios.updateById);
 router.delete('/api/usuarios/delete/:id', usuarios.deleteById);
 
+router.post('/api/libros/create', libros.create);
+router.get('/api/libros/all', libros.retrieveAllLibros);
+router.get('/api/libros/onebyid/:id', libros.getLibroById);
+router.get('/api/libros/filteringbycategoria', libros.filteringByCategoria);
+router.get('/api/libros/pagination', libros.pagination);
+router.get('/api/libros/pagefiltersort', libros.pagingfilteringsorting);
+router.put('/api/libros/update/:id', libros.updateById);
+router.delete('/api/libros/delete/:id', libros.deleteById);
 
 
 module.exports = router;

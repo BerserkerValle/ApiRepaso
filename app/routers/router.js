@@ -23,28 +23,14 @@ router.get('/api/usuarios/onebyid/:id', usuarios.getUsuarioById);
 router.put('/api/usuarios/update/:id', usuarios.updateById);
 router.delete('/api/usuarios/delete/:id', usuarios.deleteById);
 
-// Crear un nuevo libro
+
 router.post('/api/libros/create', libros.create);
-
-// Obtener todos los libros
 router.get('/api/libros/all', libros.retrieveAllLibros);
-
-// Obtener un libro por id
 router.get('/api/libros/onebyid/:id', libros.getLibroById);
-
-// Filtrar libros por categoría
 router.get('/api/libros/filteringbycategoria', libros.filteringByCategoria);
-
-// Paginación de libros
 router.get('/api/libros/pagination', libros.pagination);
-
-// Paginación, filtrado y ordenación de libros
 router.get('/api/libros/pagefiltersort', libros.pagingfilteringsorting);
-
-// Actualizar un libro por id
 router.put('/api/libros/update/:id', libros.updateById);
-
-// Eliminar un libro por id
 router.delete('/api/libros/delete/:id', libros.deleteById);
 
 module.exports = router;

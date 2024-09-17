@@ -221,3 +221,15 @@ const deleteById = async (req, res) => {
         });
     }
 };
+
+// Exporta las funciones del controlador
+module.exports = {
+    create,
+    retrieveAllLibros,
+    getLibroById,
+    filteringByCategoria,
+    pagination,
+    pagingfilteringsorting,
+    updateById,
+    deleteById
+};

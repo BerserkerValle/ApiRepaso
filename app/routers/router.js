@@ -41,6 +41,7 @@ router.get('/api/autores/pagination', autores.pagination);
 router.get('/api/autores/pagefiltersort', autores.pagingfilteringsorting);
 router.put('/api/autores/update/:id', autores.updateById);
 router.delete('/api/autores/delete/:id', autores.deleteById);
+//paco
 
 module.exports = router;
 

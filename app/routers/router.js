@@ -26,7 +26,7 @@ router.delete('/api/usuarios/delete/:id', usuarios.deleteById);
 
 router.post('/api/libros/create', libros.create);
 router.get('/api/libros/all', libros.retrieveAllLibros);
-router.get('/api/libros/onebyid/:id', libros.getLibroById);
+router.get('/api/libros/onebyid/:id', libros.getLibroById); // api/libros/onebyid/id eso es el uri 
 router.get('/api/libros/filteringbycategoria', libros.filteringByCategoria);
 router.get('/api/libros/pagination', libros.pagination);
 router.get('/api/libros/pagefiltersort', libros.pagingfilteringsorting);
